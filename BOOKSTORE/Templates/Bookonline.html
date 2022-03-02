@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Purchase</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+        }
+        .div_h{
+            height : 40px;
+            background-color: lightgrey;
+            text-align: center;
+            font-size: 30px;
+        }
+        .div_b{
+            height : 50px;
+            margin-top : 30px;
+            text-align : center;
+            background-color : yellow;
+         }
+        body{
+   			background-image: url("{% static 'book.jpg' %}");
+ 		 	background-attachment: fixed;
+  			background-size: cover;
+  			background-position: right;
+        }
+                .div_s{
+            margin : auto;
+            margin-top : 20px;
+            height : 500px;
+            width : 400px;
+            border : 2px solid black;
+            text-align : center;
+            background-color : lightblue;
+        }
+        button{
+            width : 100px;
+            font-weight : bold;
+            text-transform : uppercase;
+        }
+        a{
+            display : inline-block;
+            border : 2px solid black;
+            width : 200px;
+            font-weight : bold;
+            text-transform : uppercase;
+            background-color : white;
+        }
+        label{
+            font-size : 18px;
+        }
+        .div_d{
+            margin : 0 auto;
+            background-color : white;
+            width : 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div_h">
+        <h3>The Book Spot {{price}}</h3>
+    </div>
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="div_s">
+            <div>
+                <h3>Online Book Purchase</h3>
+            </div>
+            <br>
+            <div>
+                <label>Book Name</label>
+                <div class="div_d">{{book.Bname}}</div>
+            </div>
+            <br>
+            <div>
+                <label>Book Author</label>
+                <div class="div_d">{{book.Bauthor}}</div>
+            </div>
+            <br>
+            <div>
+                <label>Book Price</label>
+                <div class="div_d">{{book.Bprice}}</div>
+            </div>
+            <br>
+            <div>
+                <label>Book Category</label>
+                <div class="div_d">{{book.Bcategory}}</div>
+            </div>
+            <br>
+            <div>
+                <label>Books in stock</label>
+                <div class="div_d">{{book.Bstock}}</div>
+            </div>
+            <br>
+            <div>
+                <label>Book Quantity to be purchased</label>
+                <br>
+                <input type="text" required name="qty" maxlength="3">
+            </div>
+            <br>
+            <br>
+            <div>
+                 <button type="submit" class="btn btn-primary">Buy</button>
+            </div>
+            <br>
+            <a href="/home">Back to Home</a>
+        </div>
+    </form>
+</body>
+</html>

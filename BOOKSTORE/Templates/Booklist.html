@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Books</title>
+    <style>
+        *{
+            margin :0;
+            padding :0;
+        }
+        body{
+            justify-content : center;
+        }
+        .div_h{
+            height : 40px;
+            background-color: lightgrey;
+            text-align: center;
+            font-size: 30px;
+        }
+        table,tr,td{
+            margin : auto;
+            margin-top : 15px;
+            border : 1px solid blue;
+        }
+        thead{
+            font-weight : bold;
+            background-color: black;
+            color : white;
+        }
+        .a1{
+            margin-left : 600px;
+            width : 200px;
+            height : 30px;
+            text-align : center;
+            font-weight : bold;
+            display : inline-block;
+            border : 2px solid orange;
+            border-radius : 5px;
+            background-color : yellow;
+        }
+         body{
+   			background-image: url("{% static 'book.jpg' %}");
+ 		 	background-attachment: fixed;
+  			background-size: cover;
+  			background-position: right;
+        }
+        tbody{
+        background-color : lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div class="div_h">
+        <h3>The Book Spot</h3>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>Book Name</td>
+                <td>Book Author</td>
+                <td>Book Category</td>
+                <td>Book Price</td>
+                <td>Books in Stock</td>
+                <td>Books quantity</td>
+                <td>Action</td>
+                <td>Online Purchase</td>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for book in book %}
+            <tr>
+                <td>{{book.Bname}}</td>
+                <td>{{book.Bauthor}}</td>
+                <td>{{book.Bcategory}}</td>
+                <td>{{book.Bprice}}</td>
+                <td>{{book.Bstock}}</td>
+                <td>{{book.Bqty}}</td>
+                <td>
+                    <a href="/delete/{{book.id}}">Delete</a>
+                    <a href="/update/{{book.id}}">Update</a>
+                </td>
+                <td>
+                     <a href="/online/{{book.id}}">Buy online</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add" class="a1">ADD A BOOK</a>
+</body>
+</html>

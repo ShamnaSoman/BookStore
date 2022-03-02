@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+        }
+        .div_h{
+            height : 40px;
+            background-color: lightgrey;
+            text-align: center;
+            font-size: 30px;
+        }
+        .div_b{
+            height : 50px;
+            margin-top : 30px;
+            text-align : center;
+            background-color : yellow;
+         }
+        body{
+   			background-image: url("{% static 'book.jpg' %}");
+ 		 	background-attachment: fixed;
+  			background-size: cover;
+  			background-position: right;
+        }
+        ul{
+            display : inline-block;
+            border : 1px solid;
+            width : 200px;
+            height : 25px;
+            font-weight : bold;
+            background-color : lightgrey;
+            text-transform : uppercase;
+            border-radius : 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div_h">
+        <h3>The Book Spot</h3>
+    </div>
+    <div class="div_b">
+        <h3>Welcome to BOOK SPOT</h3>
+        <nav>
+            <ul>
+                <a href="list">Book List</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

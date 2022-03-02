@@ -1,0 +1,15 @@
+{
+    "Prdname":"Laptop",
+    "Price":"45000",
+    "Description":"Hp Laptop"
+}
+
+
+
+{
+    "Email":"shamna@gmail.com"
+    "Address":"abc house,kerala,India", 
+    "Purchasedate":"12-03-2022",
+    "Product":"Mobile",
+    "Price":4500.45 
+}
